@@ -27,9 +27,12 @@ class TestMongoData(unittest.TestCase):
         
         MongoClient.close(client)
         
-        op = query.to_list()[0]["Salary"]      
+        op = query.to_list()[0]["Salary"]  
+        print('Derived Output  : ' + op)
+        print('Expected Output : ' + '$330,949.2034')    
         self.assertEqual(op, '$330,949.2034')
 
 
 if __name__ == '__main__':
+    print("Unit Test for validating data in MongoDB")
     unittest.main()

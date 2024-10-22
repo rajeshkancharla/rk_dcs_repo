@@ -18,8 +18,11 @@ class TestCalculateAge(unittest.TestCase):
         df_file = file_object.create_df()
         df_file = file_object.process_date(df_file)
         df_new = file_object.calculate_age(df_file, referenceDate=referenceDate)
+        print('Derived Output  : ' + str(df_new['Age'][0]))
+        print('Expected Output : ' + '34')
         self.assertEqual(df_new['Age'][0], 34)
 
 
 if __name__ == '__main__':
+    print("Unit Test for age calculation")
     unittest.main()

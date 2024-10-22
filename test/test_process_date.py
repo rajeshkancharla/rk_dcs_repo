@@ -16,8 +16,11 @@ class TestProcessDate(unittest.TestCase):
         file_object = FileDataClass(filepath_source)
         df_file = file_object.create_df()
         df_new = file_object.process_date(df_file)
+        print('Derived Output  : ' + df_new['BirthDate'][0])
+        print('Expected Output : ' + '16/03/1989')
         self.assertEqual(df_new['BirthDate'][0], '16/03/1989')
 
 
 if __name__ == '__main__':
+    print("Unit Test for process date")
     unittest.main()

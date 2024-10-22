@@ -16,8 +16,11 @@ class TestProcessString(unittest.TestCase):
         file_object = FileDataClass(filepath_source)
         df_file = file_object.create_df()
         df_new = file_object.process_string(df_file)
+        print('Derived Output  : ' + df_new['FullName'][0])
+        print('Expected Output : ' + 'Rebbecca Didio')
         self.assertEqual(df_new['FullName'][0], 'Rebbecca Didio')
 
 
 if __name__ == '__main__':
+    print("Unit Test for process strings")
     unittest.main()

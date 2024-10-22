@@ -16,8 +16,11 @@ class TestCalculateSalaryBucket(unittest.TestCase):
         file_object = FileDataClass(filepath_source)
         df_file = file_object.create_df()
         df_new = file_object.calculate_salarybucket(df_file)
+        print('Derived Output  : ' + str(df_new['SalaryBucket'][0]))
+        print('Expected Output : ' + 'C')
         self.assertEqual(df_new['SalaryBucket'][0], 'C')
 
 
 if __name__ == '__main__':
+    print("Unit Test for salary bucket")
     unittest.main()

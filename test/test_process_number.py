@@ -16,8 +16,11 @@ class TestProcessNumber(unittest.TestCase):
         file_object = FileDataClass(filepath_source)
         df_file = file_object.create_df()
         df_new = file_object.process_number(df_file)
+        print('Derived Output  : ' + df_new['Salary'][0])
+        print('Expected Output : ' + '$330,949.2034')
         self.assertEqual(df_new['Salary'][0], '$330,949.2034')
 
 
 if __name__ == '__main__':
+    print("Unit Test for process number to currency")
     unittest.main()
