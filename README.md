@@ -54,7 +54,7 @@ The python library unittest is used for the purpose of automated testing. While 
 
 ============================================================================================
 
-** Writing to MongoDB **
+**Writing to MongoDB**
 
 As the project is done in local machine, a local host of MongoDB is used to host the database and underlying collections
 
@@ -66,7 +66,7 @@ Test Case for MongoDB
 
 ============================================================================================
 
-** Running End to End ETL **
+**Running End to End ETL**
 
 There is a main file called run_etl.py which calls all the modules and runs them in sequence. The output is as shown below
 
