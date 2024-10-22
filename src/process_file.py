@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from pymongo import MongoClient
 
 class FileDataClass:
 
@@ -54,3 +55,14 @@ if __name__ == '__main__':
     print(df_file.head(10))
 
     df_file.to_json('output/enriched_data.json', orient='records', lines=True)
+
+    client = MongoClient("mongodb://localhost:27017/")
+    db = client['local']
+    collection = db['MemberDataCollection']
+
+    df_file.reset_index(inplace=True)
+    data_dict = df_file.to_dict("records")
+
+    collection.insert_many(data_dict)
+
+    MongoClient.close(client)
