@@ -9,6 +9,7 @@ class FileDataClass:
         This is to instantiate the objects of this class
         """
         self.file_path = file_path
+        self.address_details = self.Address()
     
     def create_df(self: str) -> pd.DataFrame:
         """
@@ -61,3 +62,22 @@ class FileDataClass:
         df['SalaryBucket'] = np.where(df['Salary'] < 50000, 'A', '')
         df['SalaryBucket'] = np.where(df['Salary'] >= 100000, 'C', 'B')
         return df
+    
+    class Address:
+
+        def __init__(self) -> None:
+            pass
+
+        def nested_address(self, df: pd.DataFrame):
+            self.address_details = {}
+
+            df['AddressDetails'] = df.apply(lambda row: {
+                'Address': row['Address'],
+                'Suburb': row['Suburb'],
+                'State': row['State'],
+                'PostCode': row['Post']
+            }, axis=1)
+
+            return df
+
+

@@ -42,6 +42,11 @@ def main():
     df_file = df_file.drop(columns=['FirstName','LastName'], axis=1)
     print("   7. TRANSFORMATION : Dropping of unwanted fields Completed")
 
+    nested_class_object = file_object.Address()
+    df_file = nested_class_object.nested_address(df_file)
+    
+    df_file = df_file.drop(columns=['Address','Suburb','State','Post'], axis=1)
+
     # save the data to a JSON file and store it in folder
     df_file.to_json('output/enriched_data.json', orient='records', lines=True)
     print("   8. LOAD           : Saving the file as JSON Completed")
@@ -54,6 +59,9 @@ def main():
     # prepare the pandas dataframe to a dictionary before writing into MongoDB collection
     df_file.reset_index(inplace=True)
     data_dict = df_file.to_dict("records")
+
+    # delete all records from the MongoDB Collection
+    collection.delete_many({})
 
     # insert into MongoDB collection
     collection.insert_many(data_dict)
