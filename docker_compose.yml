@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  python_app:
+
+  mongodb_container:
+    image: mongo:latest
+    ports:
+      - 27017:27017
