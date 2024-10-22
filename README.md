@@ -58,7 +58,8 @@ The python library unittest is used for the purpose of automated testing. While 
 
 As the project is done in local machine, a local host of MongoDB is used to host the database and underlying collections
 
-<img width="1000" alt="image" src="https://github.com/user-attachments/assets/1e93f889-cdac-4d16-b3f7-7834652e1fe9">
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/4b33ab35-5af4-4a91-bbfc-4f0ad1d77023">
+
 
 Test Case for MongoDB
 
