@@ -61,29 +61,3 @@ class FileDataClass:
         df['SalaryBucket'] = np.where(df['Salary'] < 50000, 'A', '')
         df['SalaryBucket'] = np.where(df['Salary'] >= 100000, 'C', 'B')
         return df
-    
-if __name__ == '__main__':
-    filepath_source = 'data/member-data.csv'
-    referenceDate = '20240301'
-    file_object = FileDataClass(filepath_source)
-    df_file = file_object.create_df()
-    df_file = file_object.process_date(df_file)
-    df_file = file_object.process_string(df_file)
-    df_file = file_object.calculate_salarybucket(df_file)
-    df_file = file_object.process_number(df_file)
-    df_file = file_object.calculate_age(df_file, referenceDate)
-    df_file = df_file.drop(columns=['FirstName','LastName'], axis=1)
-    print(df_file.head(10))
-
-    df_file.to_json('output/enriched_data.json', orient='records', lines=True)
-
-    client = MongoClient("mongodb://localhost:27017/")
-    db = client['local']
-    collection = db['MemberDataCollection']
-
-    df_file.reset_index(inplace=True)
-    data_dict = df_file.to_dict("records")
-
-    collection.insert_many(data_dict)
-
-    MongoClient.close(client)
