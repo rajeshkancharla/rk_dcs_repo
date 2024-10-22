@@ -4,7 +4,7 @@
 
 Building an ETL Pipeline that can extracts the data from a flat file, perform transformations on the data and loads the data into JSON file and MongoDB Collection
 
-============================================================================================
+==================================================================
 
 **Extraction**
 
@@ -23,7 +23,7 @@ In a multi node cluster, the same would be done through Pyspark transformations 
 The final pandas dataframe is saved as a JSON file in the output folder.
 Also the data is written into MongoDB Database running in localhost.
 
-============================================================================================
+==================================================================
 
 **Libraries Used**
 
@@ -35,7 +35,7 @@ As specified in the requirements for the assignment, only core packages/librarie
 5. pymongo
 6. unittest
 
-============================================================================================
+==================================================================
 
 **Test Driven Development - Automated Testing**
 
@@ -52,7 +52,7 @@ The python library unittest is used for the purpose of automated testing. While 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/ef3a2967-49e3-4927-a08c-e08c5c9dab8b">
 
 
-============================================================================================
+==================================================================
 
 **Writing to MongoDB**
 
@@ -64,7 +64,7 @@ Test Case for MongoDB
 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/dd6891bb-708d-447a-98e0-64a75331b0cd">
 
-============================================================================================
+==================================================================
 
 **Running End to End ETL**
 
@@ -72,4 +72,4 @@ There is a main file called run_etl.py which calls all the modules and runs them
 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/bbbb2db8-62e5-4c01-94ee-1c1df3c64dd9">
 
-============================================================================================
+==================================================================
