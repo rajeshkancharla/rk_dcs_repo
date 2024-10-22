@@ -73,3 +73,7 @@ There is a main file called run_etl.py which calls all the modules and runs them
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/bbbb2db8-62e5-4c01-94ee-1c1df3c64dd9">
 
 ==================================================================
+
+**Dockerfile and docker_compose.yml**
+
+I am not very proficient with docker and didn't get a chance to use recently. I attempted to create these files, however they are not working and would need fixes. Only placeholders are created.
